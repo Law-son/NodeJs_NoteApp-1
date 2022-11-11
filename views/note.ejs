@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Notes</title>
+</head>
+<body>
+
+    <div id="myqrModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="page-content">
+                  <div class="form-content">
+                        <form>
+                            <p>
+                                <label for="title" class="modal-title">Note Title</label><br>
+                                <input type="text" name="title" id="title" class="modal-body-input">
+                            </p>
+                            <p>
+                                <label for="body" class="modal-title">Note Body</label><br>
+                                <textarea name="body" id="body" rows="3" class="modal-body-input"></textarea>
+                            </p>
+                            <p>
+                                <input type="submit" class="modal-submit" value="Add Note">
+                            </p>
+                        </form>
+                  </div>
+              </div>
+        </div>
+      
+      </div>
+
+    <div class="header-tab">
+        <div class="header-text">
+            <p>N O T E S</p>
+        </div>
+        <div class="header-btn">
+            <button class="h-btn" id="modal-btn">Add Note</button>
+        </div>
+    </div>
+    <div class="notes-container">
+        <% for(var i=0; i < notes.length; i++){ %>
+            <div class="note">
+                <h3 class="note-title"><%= notes[i].title %></h3>
+                <div class="note-div">
+                    <p class="note-body"><%= notes[i].body %></p>
+                    <!-- <div class="note-btns">
+                        <h3 class="btn1">?</h3>
+                        <h3 class="btn2">X</h3>
+                    </div> -->
+                </div>
+            </div>
+        <% } %>
+    </div>
+    <script src="jquery-3.6.0.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
